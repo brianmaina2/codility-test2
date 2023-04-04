@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get 'camelcase/:string', to: 'toy_problems#camelcase'
+  get 'merge_strings/:string1/:string2', to: 'toy_problems#merge_strings'
 end
