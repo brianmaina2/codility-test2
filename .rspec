@@ -29,4 +29,16 @@ RSpec.describe ToyProblemsController, type: :controller do
       expect(subject.merge_strings('abc', 'abc')).to eq('abc')
     end
   end
+
+  describe '#merge_strings' do
+    it 'merges overlapping strings' do
+      expect(subject.merge_strings('abcde', 'cdefgh')).to eq 'abcdefgh'
+      expect(subject.merge_strings('abaab', 'aabab')).to eq 'abaabab'
+      expect(subject.merge_strings('abc', 'def')).to eq 'abcdef'
+      expect(subject.merge_strings('abc', 'abc')).to eq 'abc'
+      expect(subject.merge_strings('abaabaab', 'aabaabab')).to eq 'abaabaabab'
+    end
+  end
 end
+
+
