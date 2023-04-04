@@ -23,3 +23,6 @@ Created a new Rails app using the command rails new (codility)
  -puts controller.merge_strings('abaab', 'aabab')  # Output: abaabab
  -puts controller.merge_strings('abc', 'def')  # Output: abcdef
  -puts controller.merge_strings('abc', 'abc')  # Output: abc
+
+ ## Author 
+  -Brian Maina
