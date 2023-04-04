@@ -1,0 +1,32 @@
+require 'rails_helper'
+require 'toy_problems_controller'
+
+RSpec.describe ToyProblemsController, type: :controller do
+  describe "#camelcase" do
+    it "converts 'hello case' to 'HelloCase'" do
+      expect(subject.camelcase('hello case')).to eq('HelloCase')
+    end
+
+    it "converts 'camel case word' to 'CamelCaseWord'" do
+      expect(subject.camelcase('camel case word')).to eq('CamelCaseWord')
+    end
+  end
+
+  describe "#merge_strings" do
+    it "merges 'abcde' and 'cdefgh' to 'abcdefgh'" do
+      expect(subject.merge_strings('abcde', 'cdefgh')).to eq('abcdefgh')
+    end
+
+    it "merges 'abaab' and 'aabab' to 'abaabab'" do
+      expect(subject.merge_strings('abaab', 'aabab')).to eq('abaabab')
+    end
+
+    it "merges 'abc' and 'def' to 'abcdef'" do
+      expect(subject.merge_strings('abc', 'def')).to eq('abcdef')
+    end
+
+    it "merges 'abc' and 'abc' to 'abc'" do
+      expect(subject.merge_strings('abc', 'abc')).to eq('abc')
+    end
+  end
+end
